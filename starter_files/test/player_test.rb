@@ -1,5 +1,5 @@
 require "minitest/autorun"
-require "player"
+require_relative '../lib/player'
 
 class PlayerTest < Minitest::Test
   ObjectSpace.each_object(Player.singleton_class).each do |klass|

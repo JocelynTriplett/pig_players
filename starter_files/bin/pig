@@ -12,6 +12,9 @@ ARGV.each do |arg|
   end
 end
 
+if players.length < 5
+  players.push(LessThan250WinsPlayer.new("LessThan250WinsPlayer"))
+end
 if players.length < 4
   players.push(FiveRollPlayer.new("FiveRollPlayer"))
 end

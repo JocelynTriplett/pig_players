@@ -64,6 +64,12 @@ class FiveRollPlayer < Player
   end
 end
 
+class LessThan250WinsPlayer < Player
+  def roll_again?
+    super && @wins < 250
+  end
+end
+
 
 
 
