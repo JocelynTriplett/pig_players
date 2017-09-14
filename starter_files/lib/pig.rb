@@ -31,6 +31,7 @@ class Pig
     end
 
     @players.cycle.each do |player|
+
       player.start_turn
 
       while player.roll_again?
@@ -41,6 +42,7 @@ class Pig
           log(player, "rolls a #{roll}.")
         end
         player.record_roll(roll)
+        
       end
 
       log(player, "ends their turn with a score of #{player.score}.")

@@ -15,14 +15,17 @@ class Player
   def start_turn
     @turn_score = 0
     @turn_over = false
+    @turn_rolls = 0
   end
 
   def record_roll(roll)
     if roll == 1
       @turn_score = 0
       @turn_over = true
+      @turn_rolls += 1
     else
       @turn_score += roll
+      @turn_rolls += 1
     end
   end
 
@@ -49,10 +52,20 @@ class CautiousPlayer < Player
   end
 end
 
-class 15Player < Player
+class LessCautiousPlayer < Player
   def roll_again?
-    super && @turn_score < 15
+    super && @turn_score < 20
   end
 end
+
+class FiveRollPlayer < Player
+  def roll_again?
+    super && @turn_rolls < 6
+  end
+end
+
+
+
+
 
 ## TODO add your own Player subclasses here

@@ -12,6 +12,12 @@ ARGV.each do |arg|
   end
 end
 
+if players.length < 4
+  players.push(FiveRollPlayer.new("FiveRollPlayer"))
+end
+if players.length < 3
+  players.push(LessCautiousPlayer.new("LessCautious1"))
+end
 if players.length < 2
   players.push(CautiousPlayer.new("Cautious1"))
 end
